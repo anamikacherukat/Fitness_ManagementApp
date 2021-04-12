@@ -1,0 +1,54 @@
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <a routerLink='/' class="btn btn-sm btn-outline-secondary">Logout</a>
+  </form>
+</nav>
+
+<div class='card'>
+    <div class='card-header'>
+     {{pageTitle}}
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table bg-pic'
+              *ngIf = 'users && users.length'>
+          <thead>
+            <tr>
+              
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Last name</th>
+              <th>Address</th>
+              <th>Gender</th>
+              <th>Age Group</th>
+              <th>Email Address</th>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let user of users'>
+                  
+                  <td>{{ user.member_fname|uppercase }}</td>
+                  <td>{{ user.member_mname|uppercase }}</td>
+                  <td>{{ user.member_lname|uppercase }}</td>
+
+                  <td>{{ user.member_address }}</td>
+                  <td>{{ user.member_gender }}</td>
+                  <td>{{ user.member_age }}</td>
+                  <td>{{user.member_email}}</td>
+                  <!-- <td>
+                    <button class="btn btn-warning" style="cursor:pointer"  (click)="editUser(user)" *ngIf=_auth.loggedIn() style="margin-left: 20px;"> Edit</button>
+                  </td>
+                  <td>
+                    <button class="btn btn-danger" style="cursor:pointer" (click)="deleteUser(user)" > Delete</button>
+                  </td> -->
+                  <td><a routerLink="/user/{{user._id}}" class="text-muted">Read More</a>
+                  </td>
+                </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

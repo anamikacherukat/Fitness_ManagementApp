@@ -1,0 +1,49 @@
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <a routerLink='/' class="btn btn-sm btn-outline-secondary">Logout</a>
+  </form>
+</nav>
+
+
+<div class="card">
+    <div class='card-header'>
+    {{pageTitle}}
+   </div>
+
+   
+  
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-12"> 
+        
+        <div class="panel">
+          <div class="panel-body" *ngIf='user'>
+            <div>    
+              <br>
+              <h2>{{user.member_fname}} {{user.member_mname}} {{user.member_lname}}</h2><br>
+              <p>
+                {{user.member_gender}} <br>
+                Age:
+                {{user.member_age}} <br>
+                Address:
+                {{user.member_address}} <br>
+                Email:
+                {{user.member_email}}
+              </p>
+            <hr>
+            <div style="margin-bottom: 30px;margin-top: 30px;">
+            <a routerLink="/update/{{user._id}}" class="btn btn-outline-success pull-right btnNext" *ngIf='auth.loggedIn()'>Update <i class="glyphicon glyphicon-chevron-right"></i></a>
+            <button style="margin-left: 20px;" class="btn btn-outline-danger pull-right btnNext" *ngIf='auth.loggedIn()' (click)='delete()'> Delete </button>
+                </div>
+          
+            
+          </div>
+        </div>
+                                                                                         
+                                                      
+                                                        
+         </div><!--/col-12-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <a routerLink='/' class="btn btn-sm btn-outline-secondary">Logout</a>
+    </form>
+  </nav>
+
+
+<div class='card'>
+    <div class='card-header'>
+     {{pageTitle}}
+    </div>
+    
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush" style="list-style-type: none;margin-top: 30px;">
+            <a routerLink='/addinst' class="btn btn-outline-secondary">
+          <li>
+             Add Instructor </li></a> 
+             
+        </ul>
+      </div>
+
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table bg-pic'
+              *ngIf = 'instructors && instructors.length'>
+          <thead>
+            <tr>
+              
+              <th>Name</th>
+              <th>Specialisation</th>
+              <th>Age</th>
+              <th>Phone</th>
+              <th>Email</th>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let instructor of instructors'>
+                  
+                  <td>{{ instructor.inst_name|uppercase }}</td>
+         
+
+                  <td>{{ instructor.specialisation }}</td>
+                  <td>{{ instructor.age }}</td>
+                  <td>{{ instructor.phone }}</td>
+                  <td>{{instructor.email}}</td>
+                 
+                  <td><a routerLink="/instructor/{{instructor._id}}" class="text-muted">Read More</a>
+                  </td>
+                </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

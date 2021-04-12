@@ -1,0 +1,52 @@
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <a routerLink='/' class="btn btn-sm btn-outline-secondary">Logout</a>
+    </form>
+  </nav>
+
+
+<div class="card">
+    <div class='card-header'>
+    {{pageTitle}}
+   </div>
+
+   
+  
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-12"> 
+        
+        <div class="panel">
+          <div class="panel-body" *ngIf='instructor'>
+            <div >    
+              <br>
+              <h3>{{instructor.inst_name}}</h3><br>
+              <br>
+              <h4>{{instructor.specialisation}}</h4>
+              <p>Age: 
+                  {{instructor.age}}
+                  <br>
+                  Phone:
+
+                  {{instructor.phone}}
+                  <br>
+                  Email:
+                  {{instructor.email}}
+              </p>
+            <hr>
+            <div style="margin-bottom: 30px;margin-top: 30px;">
+            <a routerLink="/updateinst/{{instructor._id}}" class="btn btn-outline-success pull-right btnNext" >Update <i class="glyphicon glyphicon-chevron-right"></i></a>
+            <button style="margin-left: 20px;" class="btn btn-outline-danger pull-right btnNext" (click)='delete()'> Delete </button>
+                </div>
+          
+            
+          </div>
+        </div>
+                                                                                         
+                                                      
+                                                        
+         </div><!--/col-12-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div style="border: 2px dashed black;margin-left: 20px;margin-right: 200px; margin-bottom: 50px;border-radius: 20px;float: left;">
+<div class="card-header">
+    <h3 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;font-size: xx-large;margin-left: 20px;margin-top: 20px;">Admin</h3>
+  </div>
+  
+  <div class="card-body">
+   <form class="form col-md-6"  (ngSubmit)= "signinUser()" > 
+
+    <div class="form-group">
+      <label for="uname1">Username</label>
+      &nbsp;&nbsp;
+      <input type="text" class="form-control" name="uname" [(ngModel)]="person.uname"/>
+    </div>
+  <br>
+  <div class="form-group">
+    <label>Password</label>
+    &nbsp;&nbsp;
+    <input type="password" class="form-control" name="password" [(ngModel)]="person.password"/>
+
+
+</div>
+  <br>
+  <button type="submit" class="btn btn-primary">Login</button>
+
+</form>
+  </div>
+  </div>
+  <div>
+    
+  </div>
